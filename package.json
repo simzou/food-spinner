@@ -1,0 +1,26 @@
+{
+  "name": "food-spinner",
+  "version": "1.0.0",
+  "description": "spin to win",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simzou/food-spinner.git"
+  },
+  "keywords": [
+    "swag"
+  ],
+  "author": "phillip, simon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simzou/food-spinner/issues"
+  },
+  "homepage": "https://github.com/simzou/food-spinner",
+  "dependencies": {
+    "express": "^4.13.3",
+    "socket.io": "^1.3.7"
+  }
+}
