@@ -1,0 +1,32 @@
+first state
+    accept inputs
+    sync index list
+second state
+    stop inputs
+    send index list
+third state
+    keep sending indexes
+fourth state
+    send done event
+    each client check last index
+
+
+
+socket api
+'user connect'
+    new user connected
+'add restaurant'
+    add new restaurant
+    return the restaurant list
+'get restaurant'
+    return the restaurant list
+'run'
+    send final list
+    send 'run state'
+        or combined?
+'running'
+    send 'running state'
+'current restaurant'
+    send index number however way you want it periodically
+'stop'
+    send final index
