@@ -30,14 +30,16 @@ io.on('connection', function(socket){
     var time_to_run = Math.floor(Math.random() * 100) + 50;
     var num_restaurants = restaurants.length;
     var time_between_runs = 100;
+    io.emit('run', restaurants);
     console.log("will run " + time_to_run + " times");
     while (time_to_run-- > 0){
         time_between_runs *= 1.1;
         console.log("waiting " + time_between_runs + " ms");
         setTimeout(function(){
-            io.emit('number sent to client', index_to_send++ % num_restaurants);
+            io.emit('current restaurant', index_to_send++ % num_restaurants);
         }, time_between_runs);
     }
+    io.emit('stop', index_to_send);
   })
 });
 
