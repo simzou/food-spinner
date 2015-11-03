@@ -14,13 +14,17 @@ io.on('connection', function(socket){
     restaurants = [];
     console.log('user disconnected');
   });
-  socket.on('chat message to server', function(msg) {
-    io.emit('chat message to client', msg);
+  socket.on('add restaurant to server', function(msg) {
     restaurants.push(msg);
+    io.emit('add restaurant to client', restaurants);
     console.log(restaurants);
     console.log('message: ' + msg);
   });
   var index_to_send = 0;
+
+  socket.on('get restaurants', function() {
+    io.emit('restaurants to client', restaurants);
+  });
 
   socket.on('run button pressed', function() {
     var time_to_run = Math.floor(Math.random() * 100) + 50;
